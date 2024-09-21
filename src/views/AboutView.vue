@@ -1,34 +1,35 @@
 <template>
   <div ref="root" class="text-center">
-    <van-notice-bar left-icon="volume-o" text="在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。" />
+    <van-notice-bar left-icon="volume-o" text="abcd" />
     <p class="mg20">This is a root element</p>
     <div class="flex flex-column">
       <div class="flex flex-center mg-t10">
-        <label>姓名：</label>
+        <label>Name：</label>
         <input ref="nameinput" v-model.trim="formData.name" maxlength="16" />
       </div>
       <div class="flex flex-center mg-t10">
-        <label>手机号：</label>
+        <label>Phone：</label>
         <input type="tel" v-model.trim="formData.phone" maxlength="11" />
       </div>
       <div class="flex flex-center mg-t10">
-        <label>验证码：</label>
+        <label>Code：</label>
         <input type="tel" v-model.trim="formData.code" maxlength="6" />
       </div>
     </div>
     <p class="mg-t10">{{ formData }}</p>
-    <van-button type="primary" @click="insertName()">姓名插入哈哈</van-button>
+    <p class="mg-t10"></p>
+    <van-button type="primary" @click="insertName()">Insert Name</van-button>
     <van-steps direction="vertical" :active="1">
       <van-step>
-        <h3>商品已下单</h3>
+        <h3>Ordered</h3>
         <p>{{ twoNow }}</p>
       </van-step>
       <van-step>
-        <h3>快件已被揽收</h3>
+        <h3>The express has been collected</h3>
         <p>{{ now }}</p>
       </van-step>
       <van-step>
-        <h3>快件已发货</h3>
+        <h3>The express has been delivered</h3>
         <p>{{ now2 }}</p>
       </van-step>
     </van-steps>
@@ -58,6 +59,6 @@ const insertName = () => {
   const index = (nameinput.value as HTMLInputElement).selectionStart;
   if (typeof index !== "number") return;
   formData.name =
-    formData.name.slice(0, index) + "哈哈" + formData.name.slice(index);
-}
+    formData.name.slice(0, index) + "Hello World!" + formData.name.slice(index);
+};
 </script>

@@ -1,6 +1,10 @@
 <template>
   <div class="home text-center">
-    <header v-pin:[direction]="pinPadding" style="width: 100%; text-align: center" class="max640">
+    <header
+      v-pin:[direction]="pinPadding"
+      style="width: 100%; text-align: center"
+      class="max640"
+    >
       <p>
         Stick me
         <span class="text-color">{{ pinPadding }}</span>
@@ -11,19 +15,27 @@
     <p class="mg20 text-color">{{ time }}</p>
 
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-    <p class="mg10 text-color">以下是自定义全局组件</p>
+    <HelloWorld msg="Welcome to Vue.js + TypeScript Demo" />
+    <p class="mg10 text-color">Pop up</p>
     <div class="mg-b20">
-      <YuiButton @click="handleClick()">自定义全局按钮</YuiButton>
+      <YuiButton @click="handleClick()">Open a Modal</YuiButton>
     </div>
     <div class="mg-b20">
       <YuiSelect></YuiSelect>
     </div>
     <div class="mg-b20 flex flex-center">
-      自定义指令：
-      <input type="range" min="0" max="500" v-model="pinPadding" style="z-index: 9" />
+      Change the position of text.
+      <input
+        type="range"
+        min="0"
+        max="500"
+        v-model="pinPadding"
+        style="z-index: 9"
+      />
     </div>
-    <van-button type="success" @click="changeColor">更改字体颜色</van-button>
+    <van-button type="success" @click="changeColor"
+      >Change font color</van-button
+    >
   </div>
 </template>
 
@@ -50,13 +62,13 @@ export default defineComponent({
   },
   methods: {
     changeColor() {
-      showToast("字体颜色已改蓝色");
+      showToast("Font color has been changed to blue.");
       this.color = "blue";
     },
     handleClick() {
       showDialog({
-        title: "标题",
-        message: "这是一个全局按钮组件",
+        title: "Title",
+        message: "This is a global component",
       });
     },
     initTime() {

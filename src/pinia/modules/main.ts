@@ -1,24 +1,24 @@
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 
 // main is the name of the store. It is unique across your application
 // and will appear in devtools
-export const useMainStore = defineStore('main', {
+export const useMainStore = defineStore("main", {
   // a function that returns a fresh state
   state: () => ({
     counter: 0,
-    name: 'Eduardo',
+    name: "Eduardo",
     selectAddress: null,
     undoneTodoList: [
       {
         id: Date.now(),
-        name: '吃饭',
+        name: "Dinner",
       },
     ],
   }),
   // optional getters
   getters: {
     // getters receive the state as first parameter
-    doubleCount: state => state.counter * 2,
+    doubleCount: (state) => state.counter * 2,
     // use getters in other getters
     doubleCountPlusOne(): number {
       return this.doubleCount * 2 + 1;
