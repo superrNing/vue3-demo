@@ -1,49 +1,55 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import AboutView from "@/views/AboutView.vue";
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
-    name: 'Home',
-    component: () => import(/* webpackChunkName: "home" */ '@/views/HomeView.vue')
+    path: "/",
+    name: "Home",
+    component: () =>
+      import(/* webpackChunkName: "home" */ "@/views/HomeView.vue"),
   },
   {
-    path: '/about',
-    name: 'About',
+    path: "/about",
+    name: "About",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '@/views/AboutView.vue')
+    // component: () => import(/* webpackChunkName: "about" */ '@/views/AboutView.vue')
+    component: AboutView,
   },
   {
-    path: '/todoList',
-    name: 'TodoList',
-    component: () => import(/* webpackChunkName: "todo" */ '@/views/TodoList.vue')
+    path: "/todoList",
+    name: "TodoList",
+    component: () =>
+      import(/* webpackChunkName: "todo" */ "@/views/TodoList.vue"),
   },
   {
-    path: '/luckdraw',
-    name: 'LuckDraw',
-    component: () => import(/* webpackChunkName: "luckdraw" */ '@/views/LuckDraw.vue')
+    path: "/luckdraw",
+    name: "LuckDraw",
+    component: () =>
+      import(/* webpackChunkName: "luckdraw" */ "@/views/LuckDraw.vue"),
   },
   {
-    path: '/address/list',
-    name: 'Address',
-    component: () => import(/* webpackChunkName: "address" */ '@/views/address/AddressList')
+    path: "/address/list",
+    name: "Address",
+    component: () =>
+      import(/* webpackChunkName: "address" */ "@/views/address/AddressList"),
   },
   {
-    path: '/address/edit',
-    name: 'AddressEdit',
-    component: () => import(/* webpackChunkName: "address" */ '@/views/address/AddressEdit')
+    path: "/address/edit",
+    name: "AddressEdit",
+    component: () =>
+      import(/* webpackChunkName: "address" */ "@/views/address/AddressEdit"),
   },
   {
-    path: '/chat/list',
-    name: 'Chat',
-    component: () => import(/* webpackChunkName: "chatpage" */ '@/views/chat')
-  }
-]
+    path: "/chat/list",
+    name: "Chat",
+    component: () => import(/* webpackChunkName: "chatpage" */ "@/views/chat"),
+  },
+];
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

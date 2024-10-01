@@ -15,7 +15,7 @@
     <p class="mg20 text-color">{{ time }}</p>
 
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Vue.js + TypeScript Demo" />
+    <HelloWorld class="text-color" msg="Welcome to Vue.js + TypeScript Demo" />
     <p class="mg10 text-color">Pop up</p>
     <div class="mg-b20">
       <YuiButton @click="handleClick()">Open a Modal</YuiButton>
@@ -23,7 +23,7 @@
     <div class="mg-b20">
       <YuiSelect></YuiSelect>
     </div>
-    <div class="mg-b20 flex flex-center">
+    <div class="mg-b20 flex flex-center text-color">
       Change the position of text.
       <input
         type="range"

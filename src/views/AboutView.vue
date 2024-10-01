@@ -4,15 +4,15 @@
     <p class="mg20">This is a root element</p>
     <div class="flex flex-column">
       <div class="flex flex-center mg-t10">
-        <label>Name：</label>
+        <label>Name:</label>
         <input ref="nameinput" v-model.trim="formData.name" maxlength="16" />
       </div>
       <div class="flex flex-center mg-t10">
-        <label>Phone：</label>
+        <label>Phone:</label>
         <input type="tel" v-model.trim="formData.phone" maxlength="11" />
       </div>
       <div class="flex flex-center mg-t10">
-        <label>Code：</label>
+        <label>Code:</label>
         <input type="tel" v-model.trim="formData.code" maxlength="6" />
       </div>
     </div>
